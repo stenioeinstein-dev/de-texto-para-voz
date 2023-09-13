@@ -1,36 +1,6 @@
-let textarea = document.querySelector("#textarea");
-let voices = document.querySelector("#voices");
-let button = document.querySelector("#button");
-let selectedVoice = 0;
-
-window.speechSynthesis.addEventListener('voiceschanged', () => {
-    let voicesList = window.speechSynthesis.getVoices();
-    for (let i in voicesList) {
-        let optionE1 = document.createElement('option');
-        optionE1.setAttribute('value', i);
-        optionE1.innerText = voicesList[i].name;
-        voices.appendChild(optionE1);
-    }
-});
-
-button.addEventListener('click', () => {
-    if (textarea.value !== '') {
-        let voicesList = window.speechSynthesis.getVoices();
-        let ut = new SpeechSynthesisUtterance(textarea.value);
-        ut.voice = voicesList[selectedVoice];
-        window.speechSynthesis.speak(ut);
-    }
-});
-
-voices.addEventListener('change', () => {
-    selectedVoice = parseInt(voices.value);
-});
-
-
-
-
-
 var btn = document.querySelector('#btn')
+
+// função webkitSpeechRecognition para capturar a voz e colocar no textarea
 btn.addEventListener('click', () => {
     btn.classList.add('fade')
 
@@ -50,3 +20,36 @@ btn.addEventListener('click', () => {
 
     })
 })
+
+
+
+let textarea = document.querySelector("#textarea");
+let voices = document.querySelector("#voices");
+let button = document.querySelector("#button");
+let selectedVoice = 0;
+
+// Descobri as opções de voz 
+window.speechSynthesis.addEventListener('voiceschanged', () => {
+    let voicesList = window.speechSynthesis.getVoices();
+    for (let i in voicesList) {
+        let optionE1 = document.createElement('option');
+        optionE1.setAttribute('value', i);
+        optionE1.innerText = voicesList[i].name;
+        voices.appendChild(optionE1);
+    }
+});
+
+// O valor do textarea é transfomado em audio 
+button.addEventListener('click', () => {
+    if (textarea.value !== '') {
+        let voicesList = window.speechSynthesis.getVoices();
+        let ut = new SpeechSynthesisUtterance(textarea.value);
+        ut.voice = voicesList[selectedVoice];
+        window.speechSynthesis.speak(ut);
+    }
+});
+
+// Qual voz foi Selecionada 
+voices.addEventListener('change', () => {
+    selectedVoice = parseInt(voices.value);
+});
