@@ -1,7 +1,7 @@
 var btn = document.querySelector('#btn')
 
 // função webkitSpeechRecognition para capturar a voz e colocar no textarea
-btn.addEventListener('click', () => {
+btn.addEventListener('click', (ea) => {
     btn.classList.add('fade')
 
     let recognition = new webkitSpeechRecognition()
