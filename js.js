@@ -53,3 +53,8 @@ button.addEventListener('click', () => {
 voices.addEventListener('change', () => {
     selectedVoice = parseInt(voices.value);
 });
+
+
+function GA() {
+    alert("Essa opção de ainda não está disponível!")
+}

@@ -2,69 +2,74 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>De Voz Para Texto Para Voz</title>
-    <link rel="stylesheet" href="./css.css">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        .box-load {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .container {
-            display: none;
-        }
-    </style>
-    <script>
-        function loading() {
-            document.getElementsByClassName('box-load')[0].style.display = "none"
-            document.getElementsByClassName('container')[0].style.display = "flex"
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Voz Para Texto Para Voz</title>
+  <link rel="stylesheet" href="./css.css">
+  <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <style>
+    .box-load {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container {
+      display: none;
+    }
+  </style>
+  <script>
+    function loading() {
+      document.getElementsByClassName('box-load')[0].style.display = "none"
+      document.getElementsByClassName('container')[0].style.display = "flex"
+    }
+  </script>
 </head>
 
 <body onLoad="loading()">
-    <div class="box-load">
-        <div class="pre">Carregando...</div>
-    </div>
+  <div class="box-load">
+    <div class="pre">Carregando...</div>
+  </div>
 
-    <div class="container">
-        <div class="content">
+  <div class="container">
+    <div class="content">
 
-            <!-- logo  -->
-          <h1 class="content_title">Voz = Texto = Voz</h1>
+      <!-- logo  -->
+      <h1 class="content_title">Voz = Texto = Voz</h1>
 
-           <!-- mic  -->
-           <div class="input_field">
-            <label>Use o seu microfone</label>
-            <button class="content_input" id="btn">
-                <i class='bx bx-microphone'></i>
-            </button>
-          </div>
-
-           <!-- text  -->
-          <div class="input_field">
-            <label>Ou digite</label>
-            <textarea class="content_input" id="textarea"></textarea>
-          </div>
-
-          <!-- selecione uma voz -->
-          <div class="input_field">
-            <div>
-              <label>Selecione uma voz</label>
-              <span id="forgot_password">Teve problema com a voz?</span>
-            </div>
-            <select  class="content_input" id="voices"></select>
-          </div>
-
-           <!-- btn para falar  -->
-          <button class="content_btn" id="button">Ouvir</button>
-        </div>
+      <!-- mic  -->
+      <div class="input_field">
+        <label>Use o seu microfone</label>
+        <button class="content_input" id="btn">
+          <i class='bx bx-microphone'></i>
+        </button>
       </div>
+
+      <!-- text  -->
+      <div class="input_field">
+        <label>Ou digite</label>
+        <textarea class="content_input" id="textarea"></textarea>
+      </div>
+
+      <!-- selecione uma voz -->
+      <div class="input_field">
+        <div>
+          <label>Selecione uma voz</label>
+          <span id="forgot_password">Teve problema com a voz?</span>
+        </div>
+        <select class="content_input" id="voices"></select>
+      </div>
+
+      <!-- btn para falar  -->
+      <div style=" width: 100%; display: flex;">
+        <button class="content_btn" id="button">Ouvir</button>
+        <button class="content_btn" id="gerar" onclick="GA()">Gerar Audio</button>
+      </div>
+
+    </div>
+  </div>
 
 </body>
 <script src="./js.js"></script>
