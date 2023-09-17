@@ -1,11 +1,11 @@
 {
-  "name": "texto-para-voz",
+  "name": "de-voz-para-texto-para-voz",
   "version": "1.0.0",
-  "description": "",
+  "description": "Foi desenvolvido em Html css e JavaScript",
   "main": "js.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Stênio Einstein",
   "license": "ISC"
 }
