@@ -5,7 +5,7 @@ btn.addEventListener('click', (ea) => {
     btn.classList.add('fade')
 
     let recognition = new webkitSpeechRecognition()
-    recognition.lang = 'pt-br'
+    recognition.lang = 'en-uk'
     recognition.addEventListener('result', (e) => {
         document.querySelector('#textarea').value = e.results[0][0].transcript
         if (textarea.value !== '') {
