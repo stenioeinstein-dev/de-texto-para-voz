@@ -23,10 +23,10 @@ btn.addEventListener('click', (ea) => {
 
 
 
-let textarea = document.querySelector("#textarea");
-let voices = document.querySelector("#voices");
-let button = document.querySelector("#button");
-let selectedVoice = 0;
+let txtr = document.querySelector("#txtr");
+let vcs = document.querySelector("#vcs");
+let bttn = document.querySelector("#bttn");
+let slctdVc = 0;
 
 // Descobri as opções de voz 
 window.speechSynthesis.addEventListener('voiceschanged', () => {
@@ -35,23 +35,23 @@ window.speechSynthesis.addEventListener('voiceschanged', () => {
         let optionE1 = document.createElement('option');
         optionE1.setAttribute('value', i);
         optionE1.innerText = voicesList[i].name;
-        voices.appendChild(optionE1);
+        vcs.appendChild(optionE1);
     }
 });
 
 // O valor do textarea é transfomado em audio 
-button.addEventListener('click', () => {
-    if (textarea.value !== '') {
+bttn.addEventListener('click', () => {
+    if (txtr.value !== '') {
         let voicesList = window.speechSynthesis.getVoices();
-        let ut = new SpeechSynthesisUtterance(textarea.value);
-        ut.voice = voicesList[selectedVoice];
+        let ut = new SpeechSynthesisUtterance(txtr.value);
+        ut.vcs = voicesList[slctdVc];
         window.speechSynthesis.speak(ut);
     }
 });
 
 // Qual voz foi Selecionada 
-voices.addEventListener('change', () => {
-    selectedVoice = parseInt(voices.value);
+vcs.addEventListener('change', () => {
+    slctdVc = parseInt(vcs.value);
 });
 
 
@@ -59,8 +59,8 @@ function GA() {
     alert("Essa opção de ainda não está disponível!")
 }
 
-let problemsound = document.querySelector("#problemsound");
+let prblmsnd = document.querySelector("#prblmsnd");
 
-problemsound.addEventListener('click', () => {
+prblmsnd.addEventListener('click', () => {
     alert("Problema teu, tô nem aí!")
 });
