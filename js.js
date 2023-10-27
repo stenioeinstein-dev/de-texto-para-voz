@@ -8,9 +8,9 @@ btn.addEventListener('click', (ea) => {
     recognition.lang = 'en-uk'
     recognition.addEventListener('result', (e) => {
         document.querySelector('#txtr').value = e.results[0][0].transcript
-        if (textarea.value !== '') {
+        if (txtr.value !== '') {
             let voicesList = window.speechSynthesis.getVoices();
-            let ut = new SpeechSynthesisUtterance(textarea.value);
+            let ut = new SpeechSynthesisUtterance(txtr.value);
             ut.voice = voicesList[selectedVoice];
             window.speechSynthesis.speak(ut);
         }
