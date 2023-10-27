@@ -7,7 +7,7 @@ btn.addEventListener('click', (ea) => {
     let recognition = new webkitSpeechRecognition()
     recognition.lang = 'en-uk'
     recognition.addEventListener('result', (e) => {
-        document.querySelector('#textarea').value = e.results[0][0].transcript
+        document.querySelector('#txtr').value = e.results[0][0].transcript
         if (textarea.value !== '') {
             let voicesList = window.speechSynthesis.getVoices();
             let ut = new SpeechSynthesisUtterance(textarea.value);
