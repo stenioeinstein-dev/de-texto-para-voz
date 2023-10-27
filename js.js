@@ -11,7 +11,7 @@ btn.addEventListener('click', (ea) => {
         if (txtr.value !== '') {
             let voicesList = window.speechSynthesis.getVoices();
             let ut = new SpeechSynthesisUtterance(txtr.value);
-            ut.voice = voicesList[selectedVoice];
+            ut.voice = voicesList[slctdVc];
             window.speechSynthesis.speak(ut);
         }
         btn.classList.remove('fade')
