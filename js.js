@@ -58,3 +58,9 @@ voices.addEventListener('change', () => {
 function GA() {
     alert("Essa opção de ainda não está disponível!")
 }
+
+let problemsound = document.querySelector("#problemsound");
+
+problemsound.addEventListener('click', () => {
+    alert("Problema teu, tô nem aí!")
+});
